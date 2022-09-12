@@ -5,26 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
-class TagController extends Controller {
-
-    public function store(Request $request) {
-
+class TagController extends Controller
+{
+    public function store(Request $request)
+    {
         $request->validate([
-            "name" => "required"
+            'name' => 'required',
         ]);
 
         Tag::create($request->all());
 
-        return redirect("/");
-        
+        return redirect('/');
     }
 
-    public function destroy(Tag $tag) {
-
+    public function destroy(Tag $tag)
+    {
         $tag->delete();
 
-        return redirect("/");
-        
+        return redirect('/');
     }
-    
 }

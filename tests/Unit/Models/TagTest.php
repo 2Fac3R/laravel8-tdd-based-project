@@ -12,12 +12,11 @@ class TagTest extends TestCase
      *
      * @return void
      */
-    public function test_slug() {
-
+    public function test_slug()
+    {
         $tag = new Tag();
-        $tag->name = "Proyecto PHP";
+        $tag->name = 'Proyecto PHP';
 
-        $this->assertEquals("proyecto-php", $tag->slug);
-
+        $this->assertEquals('proyecto-php', $tag->slug);
     }
 }

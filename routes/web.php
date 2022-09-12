@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\TagController;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome', [
-        "tags" => Tag::get()
+        'tags' => Tag::get(),
     ]);
 });
 
-Route::post('tags', [TagController::class, "store"]);
+Route::post('tags', [TagController::class, 'store']);
 
-Route::delete('tags/{tag}', [TagController::class, "destroy"]);
+Route::delete('tags/{tag}', [TagController::class, 'destroy']);
