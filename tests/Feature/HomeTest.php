@@ -7,8 +7,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class HomeTest extends TestCase {
-
+class HomeTest extends TestCase
+{
     use RefreshDatabase;
 
     /**
@@ -16,25 +16,20 @@ class HomeTest extends TestCase {
      *
      * @return void
      */
-    public function test_empty() {
-
-        $this
-            ->get("/")
+    public function test_empty()
+    {
+        $this->get('/')
             ->assertStatus(200)
-            ->assertSee("No hay etiquetas");
-
+            ->assertSee('No tags found.');
     }
 
-    public function test_with_data() {
-
+    public function test_with_data()
+    {
         $tag = Tag::factory()->create();
 
-        $this
-            ->get("/")
+        $this->get('/')
             ->assertStatus(200)
             ->assertSee($tag->name)
-            ->assertDontSee("No hay etiquetas");
-
+            ->assertDontSee('No tags found.');
     }
-
 }
