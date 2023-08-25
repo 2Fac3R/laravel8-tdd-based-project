@@ -10,7 +10,7 @@ Stack:
 
 ## Tests
 
-These are the tests implemented
+These are the implemented tests
 
     Unit/Models/TagTest.php
     Feature/HomeTest.php
@@ -59,7 +59,7 @@ Run tests
     
 Tags Manager
 
-    http://127.0.0.1:8000/tags
+    http://127.0.0.1:8000
 
 Here you can see a list of tags, you can add or delete a tag.
 
